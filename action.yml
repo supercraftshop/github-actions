@@ -1,6 +1,10 @@
 name: 'PHP CS check'
 description: 'PHP Code sniffer check with custom ruleset'
 inputs:
+  paths:
+    description: 'Paths to check'
+    required: false
+    default: './modules'
   enable_warnings:
     description: 'Enable checking for warnings (-w)'
     required: false
@@ -12,3 +16,5 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.paths }}
