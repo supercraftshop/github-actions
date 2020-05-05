@@ -1,0 +1,5 @@
+name: 'PHP CS check'
+description: 'PHP Code sniffer cuech with custom ruleset'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
