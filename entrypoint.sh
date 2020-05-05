@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sh -c "/usr/local/bin/phpcs --standard=Supercraft $*"
+sh -c "/usr/local/bin/phpcs --standard=Supercraft -"
