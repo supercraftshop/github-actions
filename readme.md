@@ -17,17 +17,16 @@ Add this code to `.github/workflows/main.yml` file.
           steps:
             - uses: actions/checkout@v2
             - name: PHPCS check
-              uses: supercraftshop/github-actions@master` 
+              uses: supercraftshop/github-actions@master 
 
 By default php_cs checks the code in `modules` directory.
 You can pass a set of your own directories using `paths` input
 
     - name: PHPCS check
-      uses: supercraftshop/github-actions@master`
+      uses: supercraftshop/github-actions@master
       with:
-        paths: './modules ./plugins ./any_other_dir'
+        paths: './modules ./plugins ./any_other_dir
         
--
 How to use CodeSniffer (phpcs) locally and/or with PhpStorm
 -
 Download last version of phpcs:  
@@ -48,7 +47,7 @@ Set Supercraft coding standart
 *How to use CodeSniffer with Supercraft standarts in CLI:*
 
 To check single class:  
-`phpcs --standard=BeGroup /path/to/php/class.php`
+`phpcs --standard=Supercraft /path/to/php/class.php`
 
 You can set Supercraft standart as default:  
 `phpcs --config-set default_standard Supercraft`
