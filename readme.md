@@ -41,8 +41,8 @@ For debian-like systems, make symlink of binary to global scope (sudo):
 
 How to set Supercraft coding standart:
 - Download `Supercraft` directory from this repo
-- Set new starnart for phpcs: `phpcs --config-set installed_paths path/to/supercraft_standard`
-- Check `Supercraft` string exists in the output of `phpcs -i`
+- Set new standart for phpcs: `phpcs --config-set installed_paths path/to/supercraft_standard`
+- Check that `Supercraft` string exists in the output of `phpcs -i`
 
 **How to use CodeSniffer with Supercraft standarts in CLI:**
 
