@@ -29,22 +29,22 @@ You can pass a set of your own directories using `paths` input
         
 How to use CodeSniffer (phpcs) locally and/or with PhpStorm
 -
-Download last version of phpcs:  
+Download last version of phpcs:
 `curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar`
 or using wget
 `wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar`
 Check phar: `php phpcs.phar -h`
 
-For debian-like systems, symlink binary to global scope (sudo):  
+For debian-like systems, make symlink of binary to global scope (sudo):  
 `ln -s \path\to\downloaded\phar \usr\bin\phpcs`  
 `chmod +x \usr\bin\phpcs`
 
-Set Supercraft coding standart
+How to set Supercraft coding standart:
 - Download `Supercraft` directory from this repo
 - Set new starnart for phpcs: `phpcs --config-set installed_paths path/to/supercraft_standard`
 - Check `Supercraft` string exists in the output of `phpcs -i`
 
-*How to use CodeSniffer with Supercraft standarts in CLI:*
+**How to use CodeSniffer with Supercraft standarts in CLI:**
 
 To check single class:  
 `phpcs --standard=Supercraft /path/to/php/class.php`
@@ -56,7 +56,7 @@ then
 
 For more usage cases check [official documentation](https://github.com/squizlabs/PHP_CodeSniffer/wiki "Title")
 
-*How to setup phpcs in PHPStorm*
+**How to setup phpcs in PHPStorm**
 - `Preferences -> Languages & Frameworks -> PHP -> Quality tools -> Code Sniffer`
 In Configuration Local intup click `...` button.  
 Set path to phpcs binary and click `Validate`. The current version on phpcs must be shown  
