@@ -27,7 +27,7 @@
 
     <!-- Import Zend coding standard (which in turn imports PEAR) -->
     <rule ref="Zend">
- 
+
        <!-- but exclude their code analyzer -->
        <exclude name="Zend.Debug.CodeAnalyzer"/>
 
@@ -51,6 +51,9 @@
        <severity>0</severity>
    </rule>
 
+    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+        <exclude-pattern>*/tests/*</exclude-pattern>
+    </rule>
    <!-- Ignore variables that contains numbers -->
    <rule ref="Zend.NamingConventions.ValidVariableName.ContainsNumbers">
        <severity>0</severity>
@@ -72,6 +75,10 @@
    <rule ref="Supercraft.Commenting.FunctionComment.MissingParamComment">
        <severity>0</severity>
    </rule>
+
+    <rule ref="PSR1.">
+        <severity>0</severity>
+    </rule>
 
    <rule ref="Supercraft.Commenting.FunctionComment.Missing">
        <type>error</type>
