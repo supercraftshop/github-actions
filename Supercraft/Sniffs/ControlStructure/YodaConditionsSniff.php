@@ -12,7 +12,7 @@
  * @link     https://github.com/djoos/Symfony-coding-standard
  */
 
-namespace Symfony\Sniffs\ControlStructure;
+namespace Supercraft\Sniffs\ControlStructure;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;

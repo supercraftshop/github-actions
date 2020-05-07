@@ -25,7 +25,7 @@
  * @license  http://spdx.org/licenses/MIT MIT License
  * @link     https://github.com/djoos/Symfony-coding-standard
  */
-namespace Symfony\Sniffs\Formatting;
+namespace Supercraft\Sniffs\Formatting;
 
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;

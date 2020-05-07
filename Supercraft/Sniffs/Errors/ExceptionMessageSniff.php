@@ -12,7 +12,7 @@
  * @link     https://github.com/djoos/Symfony-coding-standard
  */
 
-namespace Symfony\Sniffs\Errors;
+namespace Supercraft\Sniffs\Errors;
 
 
 use PHP_CodeSniffer\Files\File;

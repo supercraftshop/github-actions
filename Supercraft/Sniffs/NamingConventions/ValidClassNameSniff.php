@@ -12,7 +12,7 @@
  * @link     https://github.com/djoos/Symfony-coding-standard
  */
 
-namespace Symfony\Sniffs\NamingConventions;
+namespace Supercraft\Sniffs\NamingConventions;
 
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
@@ -135,7 +135,7 @@ class ValidClassNameSniff implements Sniff
             if ('T_ABSTRACT' == $tokens[$stackPtr]['type']) {
                 $name = $phpcsFile->findNext(T_STRING, $stackPtr);
                 $function = $phpcsFile->findNext(T_FUNCTION, $stackPtr);
-                
+
                 // making sure we're not dealing with an abstract function
                 if ($name && (is_null($function)
                     || $name < $function)
