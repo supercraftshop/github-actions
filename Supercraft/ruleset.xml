@@ -77,6 +77,10 @@
        <severity>0</severity>
    </rule>
 
+    <rule ref="Supercraft.Files.AlphanumericFilename.Invalid">
+        <exclude-pattern>*/translations/*</exclude-pattern>
+    </rule>
+
     <rule ref="PSR1.">
         <severity>0</severity>
     </rule>
