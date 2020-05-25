@@ -20,12 +20,20 @@ Add this code to `.github/workflows/main.yml` file.
               uses: supercraftshop/github-actions@master 
 
 By default, php_cs checks the code in `modules` directory.
-You can pass a set of your own directories using `paths` input
+You can pass a set of your own directories using `phpcs_paths` input
 
     - name: PHPCS check
       uses: supercraftshop/github-actions@master
       with:
-        paths: './modules ./plugins ./any_other_dir
+        phpcs_paths: './modules ./plugins ./any_other_dir
+        
+By default twigcs checks the code in `templates` directory.
+You can pass a set of your own directories using `twigcs_paths` input
+
+    - name: TWIGCS check
+      uses: supercraftshop/github-actions-twig@master
+      with:
+        twigcs_paths: './modules ./plugins ./any_other_dir        
         
 How to use CodeSniffer (phpcs) locally and/or with PhpStorm
 -
