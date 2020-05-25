@@ -3,9 +3,28 @@ FROM cytopia/phpcs:3
 COPY ./ /Supercraft
 RUN phpcs --config-set installed_paths /Supercraft && phpcs -i
 
+#COPY entrypoint.sh \
+#     problem-matcher.json \
+#     /action/
+
+RUN apk update && apk add curl \
+    zip \
+    unzip \
+    git
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 COPY entrypoint.sh \
      problem-matcher.json \
      /action/
+
+COPY TwigRules \
+     /root/.composer/supercraft
+
+COPY composer.json \
+     /root/.composer
+
+RUN composer global install
 
 RUN chmod +x /action/entrypoint.sh
 
