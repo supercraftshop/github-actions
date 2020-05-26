@@ -17,13 +17,13 @@ Add this code to `.github/workflows/main.yml` file.
           steps:
             - uses: actions/checkout@v2
             - name: PHPCS check
-              uses: supercraftshop/github-actions@master 
+              uses: supercraftshop/github-actions-php@master 
 
 By default, php_cs checks the code in `modules` directory.
 You can pass a set of your own directories using `phpcs_paths` input
 
     - name: PHPCS check
-      uses: supercraftshop/github-actions@master
+      uses: supercraftshop/github-actions-php@master
       with:
         phpcs_paths: './modules ./plugins ./any_other_dir
         
@@ -31,7 +31,7 @@ By default twigcs checks the code in `templates` directory.
 You can pass a set of your own directories using `twigcs_paths` input
 
     - name: TWIGCS check
-      uses: supercraftshop/github-actions-twig@master
+      uses: supercraftshop/github-actions-php@master
       with:
         twigcs_paths: './modules ./plugins ./any_other_dir        
         
