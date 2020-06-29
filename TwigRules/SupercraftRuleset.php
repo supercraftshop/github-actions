@@ -46,8 +46,6 @@ class SupercraftRuleset implements RulesetInterface
                 ], [2])
             ),
             new Rule\TernarySpacing(Violation::SEVERITY_ERROR, 1),
-            new Rule\LowerCaseVariable(Violation::SEVERITY_IGNORE),
-            new Rule\UnusedVariable(Violation::SEVERITY_IGNORE),
             new Rule\UnusedMacro(Violation::SEVERITY_WARNING),
             new Rule\SliceShorthandSpacing(Violation::SEVERITY_ERROR),
             new Rule\TrailingSpace(Violation::SEVERITY_ERROR),
