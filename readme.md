@@ -17,23 +17,23 @@ Add this code to `.github/workflows/main.yml` file.
           steps:
             - uses: actions/checkout@v2
             - name: PHPCS check
-              uses: supercraftshop/github-actions-php@master 
+              uses: yournextagency/github-actions-php@master 
 
 By default, php_cs checks the code in `modules` directory.
 You can pass a set of your own directories using `phpcs_paths` input
 
     - name: PHPCS check
-      uses: supercraftshop/github-actions-php@master
+      uses: yournextagency/github-actions-php@master
       with:
-        phpcs_paths: './modules ./plugins ./any_other_dir
+        phpcs_paths: './modules ./plugins ./any_other_dir'
         
 By default twigcs checks the code in `templates` directory.
 You can pass a set of your own directories using `twigcs_paths` input
 
     - name: TWIGCS check
-      uses: supercraftshop/github-actions-php@master
+      uses: yournextagency/github-actions-php@master
       with:
-        twigcs_paths: './modules ./plugins ./any_other_dir        
+        twigcs_paths: './modules ./plugins ./any_other_dir'        
         
 How to use CodeSniffer (phpcs) locally and/or with PhpStorm
 -
@@ -53,7 +53,7 @@ For debian-like systems, make symlink of binary to global scope (sudo):
 ### Set up Supercraft coding standard
 
 - Download `Supercraft` directory from this repo
-- Set new standard for phpcs: `phpcs --config-set installed_paths path/github-actions/Supercraft`
+- Set new standard for phpcs: `phpcs --config-set installed_paths path/github-actions-php/Supercraft`
 - Check that `Supercraft` string exists in the output of `phpcs -i`
 
 ### Use CodeSniffer in CLI
