@@ -28,7 +28,7 @@ class SupercraftRuleset implements RulesetInterface
             new Rule\ArraySeparatorSpacing(Violation::SEVERITY_ERROR, 0, 1),
             new Rule\HashSeparatorSpacing(Violation::SEVERITY_ERROR, 0, 1),
             new Rule\OperatorSpacing(Violation::SEVERITY_ERROR, [
-                '==', '!=', '<', '>', '>=', '<=',
+                '==', '!=', '<', '>', '>=', '<=', '=>',
                 '+', '-', '/', '*', '%', '//', '**',
                 'not', 'and', 'or',
                 '~',
