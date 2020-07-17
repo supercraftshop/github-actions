@@ -1,10 +1,12 @@
 <?php
 namespace supercraft;
 
-use Allocine\Twigcs\Ruleset\RulesetInterface;
-use Allocine\Twigcs\Rule;
-use Allocine\Twigcs\Validator\Violation;
-use Allocine\Twigcs\Whitelist\TokenWhitelist;
+use FriendsOfTwig\Twigcs\Ruleset\RulesetInterface;
+use FriendsOfTwig\Twigcs\Rule;
+use FriendsOfTwig\Twigcs\Validator\Violation;
+use FriendsOfTwig\Twigcs\Whitelist\TokenWhitelist;
+use FriendsOfTwig\Twigcs\RegEngine\RulesetConfigurator;
+use FriendsOfTwig\Twigcs\RegEngine\RulesetBuilder;
 
 class SupercraftRuleset implements RulesetInterface
 {
@@ -18,37 +20,28 @@ class SupercraftRuleset implements RulesetInterface
 
     public function getRules()
     {
-//        $configurator = new RulesetConfigurator();
-//        $configurator->setTwigMajorVersion($this->twigMajorVersion);
-//        $builder = new RulesetBuilder($configurator);
+        $configurator = new RulesetConfigurator();
+        $configurator->setTwigMajorVersion($this->twigMajorVersion);
+        $builder = new RulesetBuilder($configurator);
+        $configurator->setTagSpacingPattern('{% expr %}');
+        $configurator->setPrintStatementSpacingPattern('{{ expr }}');
+        $configurator->setEmptyParenthesesSpacingPattern('()');
+        $configurator->setParenthesesSpacingPattern('(expr)');
+        $configurator->setListSpacingPattern('expr, expr'); // Dictates spaces between values
+        $configurator->setArraySpacingPattern('[expr]'); // Dictates spaces between the [] and the inside of the array.
+        $configurator->setEmptyArraySpacingPattern('[]');
+        $configurator->setHashSpacingPattern('{key: expr, key: expr}');
+        $configurator->setEmptyHashSpacingPattern('{}');
+        $configurator->setUnaryOpSpacingPattern('op expr');
+        $configurator->setBinaryOpSpacingPattern('expr op expr');
+        $configurator->setRangeOpSpacingPattern('expr..expr');
+        $configurator->setTernarySpacingPattern('expr ? expr : expr||expr ?: expr');
+        $configurator->setSliceSpacingPattern('[expr:expr]');
 
         return [
-            new Rule\DelimiterSpacing(Violation::SEVERITY_ERROR, 1),
-            new Rule\ParenthesisSpacing(Violation::SEVERITY_ERROR, 0, 1),
-            new Rule\ArraySeparatorSpacing(Violation::SEVERITY_ERROR, 0, 1),
-            new Rule\HashSeparatorSpacing(Violation::SEVERITY_ERROR, 0, 1),
-            new Rule\OperatorSpacing(Violation::SEVERITY_ERROR, [
-                '==', '!=', '<', '>', '>=', '<=', '=>',
-                '+', '-', '/', '*', '%', '//', '**',
-                'not', 'and', 'or',
-                '~',
-                'is', 'in'
-            ], 1),
-            new Rule\PunctuationSpacing(
-                Violation::SEVERITY_ERROR,
-                ['|', '.', '..', '[', ']'],
-                0,
-                new TokenWhitelist([
-                    ')',
-                    \Twig\Token::NAME_TYPE,
-                    \Twig\Token::NUMBER_TYPE,
-                    \Twig\Token::STRING_TYPE
-                ], [2])
-            ),
-            new Rule\TernarySpacing(Violation::SEVERITY_ERROR, 1),
-            new Rule\UnusedMacro(Violation::SEVERITY_WARNING),
-            new Rule\SliceShorthandSpacing(Violation::SEVERITY_ERROR),
+            new Rule\UnusedMacro(Violation::SEVERITY_ERROR),
             new Rule\TrailingSpace(Violation::SEVERITY_ERROR),
+            new Rule\RegEngineRule(Violation::SEVERITY_ERROR, $builder->build()),
         ];
     }
 }

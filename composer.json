@@ -1,6 +1,6 @@
 {
   "require": {
-    "friendsoftwig/twigcs": "^3.2"
+    "friendsoftwig/twigcs": "4.0-BETA4"
   },
   "autoload": {
     "psr-4": {
