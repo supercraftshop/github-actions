@@ -1,6 +1,6 @@
 PHP Code sniffer Github action
 -
-This action runs phpcs with Supercraft ruleset with github action
+This action runs phpcs with YNA ruleset with github action
 
 Usage
 -
@@ -50,19 +50,19 @@ For debian-like systems, make symlink of binary to global scope (sudo):
 `ln -s \path\to\downloaded\phar \usr\bin\phpcs`  
 `chmod +x \usr\bin\phpcs`
 
-### Set up Supercraft coding standard
+### Set up YNA coding standard
 
-- Download `Supercraft` directory from this repo
-- Set new standard for phpcs: `phpcs --config-set installed_paths path/github-actions-php/Supercraft`
-- Check that `Supercraft` string exists in the output of `phpcs -i`
+- Download `YNA` directory from this repo
+- Set new standard for phpcs: `phpcs --config-set installed_paths path/github-actions-php/YNA`
+- Check that `YNA` string exists in the output of `phpcs -i`
 
 ### Use CodeSniffer in CLI
 
 To check single class:  
-`phpcs --standard=Supercraft /path/to/php/class.php`
+`phpcs --standard=YNA /path/to/php/class.php`
 
-You can set Supercraft standard as default:  
-`phpcs --config-set default_standard Supercraft`
+You can set YNA standard as default:  
+`phpcs --config-set default_standard YNA`
 then 
 `phpcs /path/to/php/class.php`
 
@@ -76,7 +76,7 @@ Set 15 - 30 in `Tool process timeout` input.
 `Apply -> OK.`
 
 - `Preferences -> Editor -> Inspections -> PHP -> Quality tools -> PHP Code Sniffer validation`  
-Select `Supercraft` in `Coding Standard` selectbox.
+Select `YNA` in `Coding Standard` selectbox.
 
 - `File -> Invalidate Caches / Restart`   
 

@@ -17,6 +17,10 @@ inputs:
     description: 'Path to phpcs binary'
     required: false
     default: 'phpcs'
+  phpcs_ignore_paths:
+    description: 'Paths to ignore'
+    required: false
+    default: '*/tests/*,*/data/*,*/libraries/*'
 runs:
   using: 'docker'
   image: 'Dockerfile'
