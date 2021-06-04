@@ -1,7 +1,7 @@
 FROM cytopia/phpcs:3
 
-COPY ./ /Supercraft
-RUN phpcs --config-set installed_paths /Supercraft && phpcs -i
+COPY ./ /YNA
+RUN phpcs --config-set installed_paths /YNA && phpcs -i
 
 #COPY entrypoint.sh \
 #     problem-matcher.json \
@@ -19,7 +19,7 @@ COPY entrypoint.sh \
      /action/
 
 COPY TwigRules \
-     /root/.composer/supercraft
+     /root/.composer/yna
 
 COPY composer.json \
      /root/.composer
@@ -34,8 +34,8 @@ ENTRYPOINT ["/action/entrypoint.sh"]
 #    && chmod a+x phpcs \
 #    && mv phpcs /usr/local/bin/phpcs
 
-#COPY ./ /Supercraft
-#RUN phpcs --config-set installed_paths /Supercraft && phpcs -i
+#COPY ./ /YNA
+#RUN phpcs --config-set installed_paths /YNA && phpcs -i
 
 #ADD entrypoint.sh /entrypoint.sh
 #RUN phpcs -i
