@@ -20,7 +20,7 @@ inputs:
   phpcs_ignore_paths:
     description: 'Paths to ignore'
     required: false
-    default: '*/tests/*,*/data/*,*/libraries/*,*/migrations/*'
+    default: '*/tests/*,*/data/*,*/libraries/*'
 runs:
   using: 'docker'
   image: 'Dockerfile'
