@@ -1,5 +1,5 @@
 <?php
-namespace YNA;
+namespace TwigRules;
 
 use FriendsOfTwig\Twigcs\RegEngine\RulesetBuilder;
 use FriendsOfTwig\Twigcs\RegEngine\RulesetConfigurator;
