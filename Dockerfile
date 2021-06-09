@@ -19,14 +19,12 @@ COPY entrypoint.sh \
      /action/
 
 COPY TwigRules \
-     /root/.composer/yna
+     /root/.composer/TwigRules
 
 COPY composer.json \
      /root/.composer
 
 RUN composer global install
-
-RUN composer dump-autoload
 
 RUN chmod +x /action/entrypoint.sh
 
