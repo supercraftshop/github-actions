@@ -19,7 +19,7 @@ COPY entrypoint.sh \
      /action/
 
 COPY TwigRules \
-     /root/.composer/yna
+     /root/.composer/TwigRules
 
 COPY composer.json \
      /root/.composer

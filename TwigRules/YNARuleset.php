@@ -1,5 +1,6 @@
 <?php
-namespace YNA;
+
+namespace TwigRules;
 
 use Allocine\Twigcs\Ruleset\RulesetInterface;
 use Allocine\Twigcs\Rule;
@@ -18,9 +19,6 @@ class YNARuleset implements RulesetInterface
 
     public function getRules()
     {
-//        $configurator = new RulesetConfigurator();
-//        $configurator->setTwigMajorVersion($this->twigMajorVersion);
-//        $builder = new RulesetBuilder($configurator);
 
         return [
             new Rule\DelimiterSpacing(Violation::SEVERITY_ERROR, 1),
@@ -32,11 +30,11 @@ class YNARuleset implements RulesetInterface
                 ['|', '.', '..', '[', ']'],
                 0,
                 new TokenWhitelist([
-                    ')',
-                    \Twig\Token::NAME_TYPE,
-                    \Twig\Token::NUMBER_TYPE,
-                    \Twig\Token::STRING_TYPE
-                ], [2])
+                                       ')',
+                                       \Twig\Token::NAME_TYPE,
+                                       \Twig\Token::NUMBER_TYPE,
+                                       \Twig\Token::STRING_TYPE,
+                                   ], [2])
             ),
             new Rule\TernarySpacing(Violation::SEVERITY_ERROR, 1),
             new Rule\UnusedMacro(Violation::SEVERITY_WARNING),
