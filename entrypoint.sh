@@ -14,7 +14,7 @@ else
     ${INPUT_PHPCS_BIN_PATH} --standard=YNA --report=checkstyle --ignore=${INPUT_PHPCS_IGNORE_PATHS} ${INPUT_PHPCS_PATHS}
 fi
 
-/root/.composer/vendor/friendsoftwig/twigcs/bin/twigcs --ruleset \\YNA\\YNARuleset ${INPUT_TWIGCS_PATHS}
+/root/.composer/vendor/friendsoftwig/twigcs/bin/twigcs --ruleset \\yna\\YNARuleset ${INPUT_TWIGCS_PATHS}
 
 status=$?
 
