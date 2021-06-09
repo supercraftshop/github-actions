@@ -26,6 +26,8 @@ COPY composer.json \
 
 RUN composer global install
 
+RUN composer dump-autoload
+
 RUN chmod +x /action/entrypoint.sh
 
 ENTRYPOINT ["/action/entrypoint.sh"]
