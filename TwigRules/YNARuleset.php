@@ -1,10 +1,11 @@
 <?php
 namespace YNA;
 
-use Allocine\Twigcs\Ruleset\RulesetInterface;
-use Allocine\Twigcs\Rule;
-use Allocine\Twigcs\Validator\Violation;
-use Allocine\Twigcs\Whitelist\TokenWhitelist;
+use FriendsOfTwig\Twigcs\RegEngine\RulesetBuilder;
+use FriendsOfTwig\Twigcs\RegEngine\RulesetConfigurator;
+use FriendsOfTwig\Twigcs\Ruleset\RulesetInterface;
+use FriendsOfTwig\Twigcs\Rule;
+use FriendsOfTwig\Twigcs\Validator\Violation;
 
 class YNARuleset implements RulesetInterface
 {
@@ -18,30 +19,16 @@ class YNARuleset implements RulesetInterface
 
     public function getRules()
     {
-//        $configurator = new RulesetConfigurator();
-//        $configurator->setTwigMajorVersion($this->twigMajorVersion);
-//        $builder = new RulesetBuilder($configurator);
+        $configurator = new RulesetConfigurator();
+        $configurator->setTwigMajorVersion($this->twigMajorVersion);
+        $builder = new RulesetBuilder($configurator);
 
         return [
-            new Rule\DelimiterSpacing(Violation::SEVERITY_ERROR, 1),
-            new Rule\ParenthesisSpacing(Violation::SEVERITY_ERROR, 0, 1),
-            new Rule\ArraySeparatorSpacing(Violation::SEVERITY_ERROR, 0, 1),
-            new Rule\HashSeparatorSpacing(Violation::SEVERITY_ERROR, 0, 1),
-            new Rule\PunctuationSpacing(
-                Violation::SEVERITY_ERROR,
-                ['|', '.', '..', '[', ']'],
-                0,
-                new TokenWhitelist([
-                    ')',
-                    \Twig\Token::NAME_TYPE,
-                    \Twig\Token::NUMBER_TYPE,
-                    \Twig\Token::STRING_TYPE
-                ], [2])
-            ),
-            new Rule\TernarySpacing(Violation::SEVERITY_ERROR, 1),
-            new Rule\UnusedMacro(Violation::SEVERITY_WARNING),
-            new Rule\SliceShorthandSpacing(Violation::SEVERITY_ERROR),
+            new Rule\LowerCaseVariable(Violation::SEVERITY_ERROR),
+            new Rule\RegEngineRule(Violation::SEVERITY_ERROR, $builder->build()),
             new Rule\TrailingSpace(Violation::SEVERITY_ERROR),
+            new Rule\UnusedMacro(Violation::SEVERITY_WARNING),
+            new Rule\UnusedVariable(Violation::SEVERITY_WARNING),
         ];
     }
 }
