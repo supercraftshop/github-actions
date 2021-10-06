@@ -80,7 +80,22 @@ Select `YNA` in `Coding Standard` selectbox.
 
 - `File -> Invalidate Caches / Restart`   
 
-        
+How to use TwigCS locally
+-
 
-          
-    
+- Add this repo to composer.json repositories:
+    ```json
+    "repositories": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/yournextagency/github-actions-php.git"
+        }
+    ]
+    ```
+- Next add `"yournextagency/github-actions-php": "dev-master"` in composer.json "require"
+- `composer update`
+- After you will be able to run TwigCS:
+
+  `
+  ./vendor/bin/twigcs --ruleset \\TwigRules\\YNARuleset ./templates
+  `
