@@ -1,4 +1,6 @@
 {
+  "name": "yournextagency/github-actions-php",
+  "type": "library",
   "require": {
     "friendsoftwig/twigcs": "^3.2"
   },
