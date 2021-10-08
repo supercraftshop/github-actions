@@ -26,7 +26,7 @@ You can pass a set of your own directories using `phpcs_paths` input
       uses: yournextagency/github-actions-php@master
       with:
         phpcs_paths: './modules ./plugins ./any_other_dir'
-        
+
 By default twigcs checks the code in `templates` directory.
 You can pass a set of your own directories using `twigcs_paths` input
 
@@ -34,7 +34,7 @@ You can pass a set of your own directories using `twigcs_paths` input
       uses: yournextagency/github-actions-php@master
       with:
         twigcs_paths: './modules ./plugins ./any_other_dir'        
-        
+
 How to use CodeSniffer (phpcs) locally and/or with PhpStorm
 -
 ### Download the latest version of phpcs:
@@ -63,22 +63,22 @@ To check single class:
 
 You can set YNA standard as default:  
 `phpcs --config-set default_standard YNA`
-then 
+then
 `phpcs /path/to/php/class.php`
 
 For more usage cases check [official documentation](https://github.com/squizlabs/PHP_CodeSniffer/wiki "Title")
 
 ### Use CodeSniffer in PHPStorm
 - `Preferences -> Languages & Frameworks -> PHP -> Quality tools -> Code Sniffer`
-In Configuration Local intup click `...` button.  
-Set path to phpcs binary and click `Validate`. The current version on phpcs must be shown  
-Set 15 - 30 in `Tool process timeout` input.  
-`Apply -> OK.`
+  In Configuration Local intup click `...` button.  
+  Set path to phpcs binary and click `Validate`. The current version on phpcs must be shown  
+  Set 15 - 30 in `Tool process timeout` input.  
+  `Apply -> OK.`
 
 - `Preferences -> Editor -> Inspections -> PHP -> Quality tools -> PHP Code Sniffer validation`  
-Select `YNA` in `Coding Standard` selectbox.
+  Select `YNA` in `Coding Standard` selectbox.
 
-- `File -> Invalidate Caches / Restart`   
+- `File -> Invalidate Caches / Restart`
 
 How to use TwigCS locally
 -
@@ -92,8 +92,7 @@ How to use TwigCS locally
         }
     ]
     ```
-- Next add `"yournextagency/github-actions-php": "dev-master"` in composer.json "require"
-- `composer update`
+- `composer require yournextagency/github-actions-php:dev-master`
 - After you will be able to run TwigCS:
 
   `
