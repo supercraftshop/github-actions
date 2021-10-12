@@ -12,7 +12,7 @@
  * @link     https://github.com/djoos/Symfony-coding-standard
  */
 
-namespace YNA\Sniffs\Whitespace;
+namespace YNA\Sniffs\WhiteSpace;
 
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
