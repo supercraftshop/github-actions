@@ -92,7 +92,7 @@ How to use TwigCS locally
         }
     ]
     ```
-- `composer require yournextagency/github-actions-php:dev-master`
+- `composer require yournextagency/github-actions-php:dev-master --dev`
 - After you will be able to run TwigCS:
 
   `
