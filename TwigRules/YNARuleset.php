@@ -30,7 +30,7 @@ class YNARuleset implements RulesetInterface
         // Dictates spaces between the [] and the inside of the array.
         $configurator->setArraySpacingPattern('[expr]');
         $configurator->setEmptyArraySpacingPattern('[]');
-        $configurator->setHashSpacingPattern('{key: expr, key: expr}');
+        $configurator->setHashSpacingPattern('{ key: expr, key: expr }');
         $configurator->setEmptyHashSpacingPattern('{}');
         $configurator->setTernarySpacingPattern('expr ? expr : expr||expr ?: expr');
         $configurator->setSliceSpacingPattern('[expr:expr]');
@@ -41,12 +41,6 @@ class YNARuleset implements RulesetInterface
         $builder = new RulesetBuilder($configurator);
 
         return [
-            new Rule\RegEngineRule(Violation::SEVERITY_ERROR, $builder->build()),
-            new Rule\RegEngineRule(Violation::SEVERITY_ERROR, $builder->build()),
-            new Rule\RegEngineRule(Violation::SEVERITY_ERROR, $builder->build()),
-            new Rule\RegEngineRule(Violation::SEVERITY_ERROR, $builder->build()),
-            new Rule\RegEngineRule(Violation::SEVERITY_ERROR, $builder->build()),
-            new Rule\RegEngineRule(Violation::SEVERITY_ERROR, $builder->build()),
             new Rule\RegEngineRule(Violation::SEVERITY_ERROR, $builder->build()),
             new Rule\UnusedMacro(Violation::SEVERITY_WARNING),
             new Rule\TrailingSpace(Violation::SEVERITY_ERROR),
