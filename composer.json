@@ -2,7 +2,7 @@
   "name": "yournextagency/github-actions-php",
   "type": "library",
   "require": {
-    "friendsoftwig/twigcs": "^3.2"
+    "friendsoftwig/twigcs": "^5.1"
   },
   "autoload": {
     "psr-4": {
