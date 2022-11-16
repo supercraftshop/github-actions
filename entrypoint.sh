@@ -14,8 +14,6 @@ else
     ${INPUT_PHPCS_BIN_PATH} --standard=YNA --report=checkstyle --ignore=${INPUT_PHPCS_IGNORE_PATHS} ${INPUT_PHPCS_PATHS}
 fi
 
-/root/.composer/vendor/friendsoftwig/twigcs/bin/twigcs --ruleset \\TwigRules\\YNARuleset ${INPUT_TWIGCS_PATHS}
-
 status=$?
 
 echo "::remove-matcher owner=phpcs::"
