@@ -18,9 +18,6 @@ COPY entrypoint.sh \
      problem-matcher.json \
      /action/
 
-COPY TwigRules \
-     /root/.composer/TwigRules
-
 COPY composer.json \
      /root/.composer
 

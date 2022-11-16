@@ -1,6 +1,6 @@
-PHP Code sniffer Github action
+PHP Code sniffer GitHub action
 -
-This action runs phpcs with YNA ruleset with github action
+This action runs phpcs with YNA ruleset with GitHub action
 
 Usage
 -
@@ -26,14 +26,6 @@ You can pass a set of your own directories using `phpcs_paths` input
       uses: yournextagency/github-actions-php@master
       with:
         phpcs_paths: './modules ./plugins ./any_other_dir'
-
-By default twigcs checks the code in `templates` directory.
-You can pass a set of your own directories using `twigcs_paths` input
-
-    - name: TWIGCS check
-      uses: yournextagency/github-actions-php@master
-      with:
-        twigcs_paths: './modules ./plugins ./any_other_dir'        
 
 How to use CodeSniffer (phpcs) locally and/or with PhpStorm
 -
@@ -79,22 +71,3 @@ For more usage cases check [official documentation](https://github.com/squizlabs
   Select `YNA` in `Coding Standard` selectbox.
 
 - `File -> Invalidate Caches / Restart`
-
-How to use TwigCS locally
--
-
-- Add this repo to composer.json repositories:
-    ```json
-    "repositories": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/yournextagency/github-actions-php.git"
-        }
-    ]
-    ```
-- `composer require yournextagency/github-actions-php:dev-master --dev`
-- After you will be able to run TwigCS:
-
-  `
-  ./vendor/bin/twigcs --ruleset \\TwigRules\\YNARuleset ./templates
-  `

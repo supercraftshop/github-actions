@@ -1,13 +1,9 @@
 {
   "name": "yournextagency/github-actions-php",
   "type": "library",
-  "require": {
-    "friendsoftwig/twigcs": "^3.2"
-  },
   "autoload": {
     "psr-4": {
-      "YNA\\": "YNA/",
-      "TwigRules\\": "TwigRules/"
+      "YNA\\": "YNA/"
     }
   }
 }

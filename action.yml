@@ -1,14 +1,10 @@
-name: 'PHP and Twig CS check'
-description: 'PHP and Twig Code sniffer check with custom ruleset'
+name: 'PHP CS check'
+description: 'PHP Code sniffer check with custom ruleset'
 inputs:
   phpcs_paths:
     description: 'Paths to check'
     required: false
     default: './modules'
-  twigcs_paths:
-    description: 'Paths to check'
-    required: false
-    default: './templates'
   enable_warnings:
     description: 'Enable checking for warnings (-w)'
     required: false
@@ -26,4 +22,3 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.phpcs_paths }}
-    - ${{ inputs.twigcs_paths }}
