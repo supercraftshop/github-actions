@@ -40,6 +40,9 @@
 
        <!-- covered by Squiz FunctionDeclarationSniff -->
        <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine"/>
+
+       <!-- covered by YNA ValidVariableName -->
+       <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps"/>
    </rule>
 
    <rule ref="Generic.Files.LineLength">
@@ -53,6 +56,13 @@
    <rule ref="Squiz.Strings.ConcatenationSpacing">
       <properties>
          <property name="ignoreNewlines" value="true"/>
+      </properties>
+   </rule>
+
+   <!-- Valid YNA namings, ;-separated -->
+   <rule ref="YNA.NamingConventions.ValidVariableName">
+      <properties>
+         <property name="ynaOkVariables" value="I;"/>
       </properties>
    </rule>
 
