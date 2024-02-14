@@ -49,6 +49,13 @@
       </properties>
    </rule>
 
+   <!-- Allow string concatenation across lines -->
+   <rule ref="Squiz.Strings.ConcatenationSpacing">
+      <properties>
+         <property name="ignoreNewlines" value="true"/>
+      </properties>
+   </rule>
+
    <!-- Don't enforce Zend's private member underscores -->
    <rule ref="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore">
        <severity>0</severity>
