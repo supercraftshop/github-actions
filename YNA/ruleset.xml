@@ -41,10 +41,9 @@
 
    <rule ref="Generic.Files.LineLength">
       <properties>
-       <property name="lineLimit" value="120"/>
-       <property name="absoluteLineLimit" value="120"/>
+       <property name="lineLimit" value="80"/>
+       <property name="absoluteLineLimit" value="100"/>
       </properties>
-      <severity>0</severity>
    </rule>
 
    <!-- Don't enforce Zend's private member underscores -->
