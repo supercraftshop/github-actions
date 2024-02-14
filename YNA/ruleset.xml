@@ -18,6 +18,7 @@
     <rule ref="Generic.CodeAnalysis.EmptyPHPStatement"/>
     <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
     <rule ref="Generic.PHP.DeprecatedFunctions"/>
+    <rule ref="Generic.PHP.RequireStrictTypes"/>
     <rule ref="Squiz.ControlStructures.ControlSignature"/>
     <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration"/>
     <rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
