@@ -42,7 +42,7 @@
        <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine"/>
 
        <!-- covered by YNA ValidVariableName -->
-       <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps"/>
+	   <exclude name="Zend.NamingConventions.ValidVariableName.NotCamelCaps"/>
    </rule>
 
    <rule ref="Generic.Files.LineLength">
@@ -61,8 +61,8 @@
 
    <!-- Valid YNA namings, ;-separated -->
    <rule ref="YNA.NamingConventions.ValidVariableName">
-      <properties>
-         <property name="ynaOkVariables" value="I;"/>
+	  <properties>
+	     <property name="ynaOkVariables" value="I;"/>
       </properties>
    </rule>
 
