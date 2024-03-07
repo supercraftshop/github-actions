@@ -1,4 +1,4 @@
-FROM cytopia/phpcs:3
+FROM cytopia/phpcs:latest
 
 COPY ./ /YNA
 RUN phpcs --config-set installed_paths /YNA && phpcs -i
